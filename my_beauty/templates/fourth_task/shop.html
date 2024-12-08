@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-
+{% extends 'menu.html' %}
 <html lang="en">
 
 <head>
@@ -9,12 +9,18 @@
 </head>
 
 <body>
-    <h1>Магазин</h1>
-    <ul>
-        <li> <h3>одуванчик <button><h3>купить</h3></button> </h3></li>
-        <li> <h3>розы <button><h3>купить</h3></button> </h3></li>
-        <li> <h3>хризантемы <button><h3>купить</h3></button> </h3></li>
-    </ul>
-    <button><a href="/">вернуться назад</a></button>
+    {% block header %}
+        <h1>Магазин</h1>
+    {% endblock %}
+    {% block menu%}
+        {{ block.super }}
+    {% endblock %}
+    {% block content %}
+    {% for i in games %}
+        <ul>
+            <li><p>{{ i }}   <button> купить</button></p></li>
+        </ul>
+    {% endfor %}
+    {% endblock %}
 </body>
 </html>
