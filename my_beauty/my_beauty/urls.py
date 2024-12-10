@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gendelf.views import shop
+from bilbo.views import i1, i2
 from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='main.html')),
-    path('shop/', shop),
-    path('shopping_cart/', TemplateView.as_view(template_name='shopping_cart.html')),
+    #path('', TemplateView.as_view(template_name='main.html')),
+    #path('shop/', shop),
+    #path('shopping_cart/', TemplateView.as_view(template_name='shopping_cart.html')),
+    path('', i2 ),
+    path('second/', i1)
 ]
